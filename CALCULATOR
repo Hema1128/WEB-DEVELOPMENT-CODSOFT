@@ -1,0 +1,182 @@
+HTML:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn" onclick="appendNumber(7)">7</button>
+            <button class="btn" onclick="appendNumber(8)">8</button>
+            <button class="btn" onclick="appendNumber(9)">9</button>
+            <button class="btn operator" onclick="setOperator('+')">+</button>
+
+            <button class="btn" onclick="appendNumber(4)">4</button>
+            <button class="btn" onclick="appendNumber(5)">5</button>
+            <button class="btn" onclick="appendNumber(6)">6</button>
+            <button class="btn operator" onclick="setOperator('-')">-</button>
+
+            <button class="btn" onclick="appendNumber(1)">1</button>
+            <button class="btn" onclick="appendNumber(2)">2</button>
+            <button class="btn" onclick="appendNumber(3)">3</button>
+            <button class="btn operator" onclick="setOperator('*')">*</button>
+
+            <button class="btn" onclick="appendNumber(0)">0</button>
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn equal" onclick="calculate()">=</button>
+            <button class="btn operator" onclick="setOperator('/')">/</button>
+        </div>
+    </div>
+    <script src="task-3.js"></script>
+</body>
+</html>
+
+CSS:-
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+}
+
+.display {
+    background-color: #222;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #d1d1d1;
+}
+
+button.operator {
+    background-color: #1b1919;
+    color: white;
+}
+
+button.operator:hover {
+    background-color: #f4f2f2;
+}
+
+button.equal {
+    background-color: #151715;
+    color: white;
+    grid-column: span 2;
+}
+
+button.equal:hover {
+    background-color: #0f110f;
+}
+
+button:active {
+    background-color: #d1d1d1;
+}
+
+JS:-
+let currentInput = "0"; 
+let previousInput = "";  
+let operator = null;     
+
+
+const display = document.getElementById('display');
+
+
+function appendNumber(number) {
+
+    if (currentInput === "0") {
+        currentInput = String(number);
+    } else {
+        currentInput += String(number);
+    }
+    updateDisplay();
+}
+
+
+function setOperator(op) {
+    
+    if (operator !== null) {
+        calculate();
+    }
+    previousInput = currentInput;
+    currentInput = "0"; 
+    operator = op;
+}
+
+
+function clearDisplay() {
+    currentInput = "0";
+    previousInput = "";
+    operator = null;
+    updateDisplay();
+}
+
+
+function calculate() {
+    let result;
+    const prev = parseFloat(previousInput);  
+    const current = parseFloat(currentInput); 
+    
+    if (operator === "+") {
+        result = prev + current;
+    } else if (operator === "-") {
+        result = prev - current;
+    } else if (operator === "*") {
+        result = prev * current;
+    } else if (operator === "/") {
+        if (current === 0) {
+            result = "Error";  
+        } else {
+            result = prev / current;
+        }
+    }
+    
+    currentInput = String(result);  
+    operator = null;  
+    previousInput = "";
+    updateDisplay();
+}
+
+
+function updateDisplay() {
+    display.textContent = currentInput;
+}
+
+
