@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Competition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Quiz Competition 2024</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#how-to-participate">How to Participate</a></li>
+                    <li><a href="#prizes">Prizes</a></li>
+                    <li><a href="#register">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="container">
+            <h2>Join the Ultimate Quiz Competition!</h2>
+            <p>Test your knowledge, win exciting prizes, and have fun! Ready to take the challenge?</p>
+            <a href="#register" class="cta-button">Register Now</a>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2>About the Quiz</h2>
+            <p>Welcome to the 2024 Quiz Competition! This quiz will test your knowledge across various subjects including science, history, technology, and pop culture. It's open to all students and anyone passionate about learning.</p>
+        </div>
+    </section>
+    <section id="how-to-participate">
+        <div class="container">
+            <h2>How to Participate</h2>
+            <ol>
+                <li>Step 1: Register for the quiz by clicking the "Register Now" button.</li>
+                <li>Step 2: Prepare yourself by reviewing the subjects covered in the quiz.</li>
+                <li>Step 3: Take the quiz on the scheduled date and time!</li>
+                <li>Step 4: Check the results and win amazing prizes!</li>
+            </ol>
+        </div>
+    </section>
+    <section id="prizes">
+        <div class="container">
+            <h2>Exciting Prizes to Win!</h2>
+            <div class="prizes">
+                <div class="prize-card">
+                    <h3>1st Prize: 10000</h3>
+                    <p>Cash prize for the winner along with a certificate of achievement.</p>
+                </div>
+                <div class="prize-card">
+                    <h3>2nd Prize: 5000</h3>
+                    <p>Cash prize for the second runner-up along with a certificate.</p>
+                </div>
+                <div class="prize-card">
+                    <h3>3rd Prize: 1000</h3>
+                    <p>Cash prize for the third runner-up and a certificate of participation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="register">
+        <div class="container">
+            <h2>Register Now</h2>
+            <p>Don't miss out on the chance to win amazing prizes! Register now to secure your spot in the quiz competition.</p>
+            <a href="registration-form.html" class="cta-button">Register Here</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Quiz Competition. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+CSS:-
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+ }
+
+
+ header {
+    background-color:#333;
+    color:white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 38px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a { 
+    color:white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+#hero {
+    background: #007BFF;
+    color:white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size:48px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color:#ff5722;
+    color:white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+
+#about {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size:36px;
+    margin-bottom: 20px;
+    }
+
+    #about p {
+        font-size: 20px;
+    }
+
+
+    #how-to-participate {
+        background-color: #fff;
+        padding: 60ppx 0;
+        text-align: center;
+    }
+
+    #how-to-participate h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+      
+    #how-to-participate ol {
+    font-size: 18px;  
+    margin: 0 auto;
+    display:inline-block;
+    text-align: left;
+    }
+
+   #how-to-participate ol li {
+    margin-bottom: 15px;
+}
+
+
+#prizes  {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#prizes h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.prizes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.prize-card {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 1);
+    widtth: 25%;
+}
+
+.prize-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.prize-card p {
+    font-size: 16px;
+}
+
+
+#register {
+    padding: 60px 0;
+    text-align: center;
+    background-color:#007BFF;
+    color:white;
+}
+
+#register h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#register p {
+    font-size: 20px;
+}
+
+#register .cta-button {
+ background-color: #ff5722;
+ padding: 15px 30px;
+ color:white;
+ text-decoration: none;
+ border-radius: 5px;
+ font-size: 18px;
+} 
+
+
+footer {
+ background-color: #333;
+ color: white;
+ text-align: center;
+ padding: 20px 0;  
+}
+
+footer p {
+    font-size: 14px;
+}
